@@ -9,11 +9,13 @@ import { API_BASE_URL } from "./services/files/files.service";
 import { environment } from "../environments/environment";
 import { MaterialModule } from "./modules/material/material.module";
 import { DownloadFileComponent } from './views/download-file/download-file.component';
+import { UploadFileComponent } from './views/upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DownloadFileComponent
+    DownloadFileComponent,
+    UploadFileComponent
   ],
     imports: [
       BrowserModule,

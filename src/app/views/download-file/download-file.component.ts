@@ -12,9 +12,8 @@ export class DownloadFileComponent implements OnInit {
 
   ngOnInit(): void {
     const guid = this.route.snapshot.paramMap.get('guid')!
-    const regex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
-    if (!regex.test(guid)) {
+    if (!this.checkIfGuidIsValid(guid)) {
       console.error("Użyty identyfikator nie jest poprawnym identyfikatorem GUID")
       return;
     }
@@ -41,5 +40,11 @@ export class DownloadFileComponent implements OnInit {
     dummyLink.click();
 
     window.URL.revokeObjectURL(url);
+    window.close();
+  }
+
+  private checkIfGuidIsValid(guid: string) {
+    const regex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+    return regex.test(guid);
   }
 }

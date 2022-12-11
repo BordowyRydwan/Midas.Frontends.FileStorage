@@ -31,6 +31,7 @@ import { MatIconModule } from "@angular/material/icon";
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule,
   ],
   providers: [
     { provide: MAT_DATE_LOCALE, useValue: 'pl-PL' },
